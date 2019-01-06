@@ -76,8 +76,14 @@ def sum_radii(circles):
       :type circles:  list | tuple of rg.Circle
       :rtype: int | float
     """
+    sum=0
+    for k in range(len(circles)):
+        circle=circles[k]
+        radius=circle.radius
+        sum=sum+radius
+    return sum
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # Note: No fair using "slices" on ANY of these problems,
@@ -151,6 +157,13 @@ def count_last_n_odds(integers, n):
       :type n: int
       :rtype: int
     """
+    if n>0:
+        for k in range(len(integers)-1,-1,-1):
+                count=0
+                if(integers[k]%2)!=0:
+                    count=count+1
+                    if count<=n:
+                        return count
     # -------------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #     The testing code is already written for you (above).
@@ -226,8 +239,14 @@ def index_of_first_negative(numbers):
       :type numbers: list | tuple of float | int
       :rtype: int
     """
+    for k in range(len(numbers)):
+        if numbers[k]<0:
+            return k
+        elif k==len(numbers)-1:
+            return -1
+
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
 
@@ -284,6 +303,14 @@ def contains_an_a(s):
       :type s: str
       :rtype: bool
     """
+    for k in range(len(s)):
+        if s[k]=='a':
+            return True
+        elif k==len(s)-1:
+            return False
+        elif s[k]==' ':
+            return False
+
     # -------------------------------------------------------------------------
     # TODO: 5. Implement and test this function.
     #     The testing code is already written for you (above).
